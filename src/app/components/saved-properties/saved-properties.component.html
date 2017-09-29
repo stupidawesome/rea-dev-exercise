@@ -1,11 +1,11 @@
 <rea-list>
-  <rea-list-item *ngFor="let property of results">
+  <rea-list-item *ngFor="let property of properties">
     <rea-hover-intent class="result">
       <rea-property-card [property]="property"></rea-property-card>
-      <rea-hover-intent-reveal *ngIf="!savedPropertiesDict[property.id]">
+      <rea-hover-intent-reveal>
         <rea-layer class="overlay">
-          <rea-button class="action" (click)="addProperty(property)">
-            <span>add property</span>
+          <rea-button class="action" (click)="removeProperty(property)">
+            <span>remove property</span>
           </rea-button>
         </rea-layer>
       </rea-hover-intent-reveal>

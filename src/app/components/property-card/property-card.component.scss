@@ -1,0 +1,44 @@
+:host {
+  display: block;
+  width: 20rem;
+  height: 20rem;
+  position: relative;
+  box-shadow: 0 0 1rem rgba(black, 0.2);
+}
+
+.agencyBrandingColors {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+}
+
+.agencyLogo {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  height: 2rem;
+}
+
+.mainImage {
+  display: block;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  width: 20rem;
+  height: 15rem;
+}
+
+.price {
+  display: block;
+  position: absolute;
+  line-height: 3rem;
+  left: 1rem;
+  top: 17rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+

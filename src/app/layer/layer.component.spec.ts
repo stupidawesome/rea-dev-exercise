@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PropertiesSavedComponent } from './properties-saved.component';
+import { LayerComponent } from './layer.component';
 
-describe('PropertiesSavedComponent', () => {
-  let component: PropertiesSavedComponent;
-  let fixture: ComponentFixture<PropertiesSavedComponent>;
+describe('LayerComponent', () => {
+  let component: LayerComponent;
+  let fixture: ComponentFixture<LayerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PropertiesSavedComponent ]
+      declarations: [ LayerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PropertiesSavedComponent);
+    fixture = TestBed.createComponent(LayerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

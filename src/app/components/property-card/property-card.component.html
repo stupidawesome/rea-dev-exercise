@@ -1,3 +1,6 @@
-<p>
-  property-card works!
-</p>
+<div *ngIf="property">
+  <div [ngStyle]="{'background-color': property.agency.brandingColors.primary}" class="agencyBrandingColors"></div>
+  <img src="" [attr.src]="property.agency.logo" class="agencyLogo" alt="">
+  <img src="" [attr.src]="property.mainImage" class="mainImage" alt="" />
+  <div class="price">Price: {{property.price}}</div>
+</div>
