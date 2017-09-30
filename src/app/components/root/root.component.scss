@@ -1,15 +1,13 @@
 .grid {
-
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0;
 }
 
-.heading {
-
-}
-
-.results {
-
-}
-
-.propertiesSaved {
-
+.column {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+  font-size: 1rem;
 }

@@ -1,13 +1,15 @@
 <div class="grid">
-  <rea-heading class="heading">
-    <span>Results</span>
-  </rea-heading>
+  <div class="column">
+    <rea-heading>
+      <span>Results</span>
+    </rea-heading>
+    <rea-results [results]="results$ | async" [savedProperties]="savedProperties$ | async"></rea-results>
+  </div>
 
-  <rea-results class="results" [results]="results$ | async" [savedProperties]="savedProperties$ | async"></rea-results>
-
-  <rea-heading class="heading">
-    <span>Properties Saved</span>
-  </rea-heading>
-
-  <rea-properties-saved class="propertiesSaved" [properties]="savedProperties$ | async"></rea-properties-saved>
+  <div class="column">
+    <rea-heading class="heading">
+      <span>Properties Saved</span>
+    </rea-heading>
+    <rea-properties-saved [properties]="savedProperties$ | async"></rea-properties-saved>
+  </div>
 </div>

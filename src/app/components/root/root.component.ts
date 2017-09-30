@@ -18,5 +18,6 @@ export class RootComponent implements OnInit {
   constructor(private propertySvc: PropertyService, private savedPropertiesSvc: SavedPropertiesService) {}
 
   ngOnInit() {
+    this.propertySvc.load();
   }
 }

@@ -1,8 +1,8 @@
 export function createDict (propName, collection) {
   const dict = [];
   if (collection) {
-    for (const property of collection) {
-      dict[propName] = property;
+    for (const value of collection) {
+      dict[value[propName]] = value;
     }
   }
   return dict;

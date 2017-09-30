@@ -5,16 +5,25 @@ import {Observable} from 'rxjs/Observable';
 import {BackendDataResponse} from '../interfaces/backend-data-response';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 @Injectable()
 export class PropertyService {
 
-  load$: Observable<any> = this.http.get('assets/mocks/backend-data.json').share();
+  private fetch$: Observable<any> = this.http.get('assets/mocks/backend-data.json').share();
+  private data$ = new ReplaySubject<any>(1);
 
-  results$: Observable<Property[]> = this.load$.map((data: BackendDataResponse) => data.results.map(Property.create));
+  get results$(): Observable<Property[]> {
+    return this.data$.map((data: BackendDataResponse) => data.results.map(Property.create));
+  }
 
-  savedProperties$: Observable<Property[]> = this.load$
-    .map((data: BackendDataResponse) => data.saved.map(Property.create));
+  get savedProperties$(): Observable<Property[]> {
+    return this.data$.map((data: BackendDataResponse) => data.saved.map(Property.create));
+  }
 
   constructor(private http: HttpClient) {}
+
+  load() {
+    this.fetch$.subscribe((data: BackendDataResponse) => this.data$.next(data));
+  }
 }
