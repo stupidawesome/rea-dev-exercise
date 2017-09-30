@@ -7,16 +7,16 @@ import 'rxjs/add/operator/withLatestFrom';
 
 @Injectable()
 export class SavedPropertiesService {
-  update$: Subject<Function> = new Subject();
+  private _update$: Subject<Function> = new Subject();
   private _properties$: ReplaySubject<Property[]> = new ReplaySubject(1);
 
   get properties$() {
-    return this.propertySvc.savedProperties$
-      .merge(this._properties$);
+    return this._properties$
+      .merge(this.propertySvc.savedProperties$);
   }
 
   constructor(private propertySvc: PropertyService) {
-    this.update$
+    this._update$
       .withLatestFrom(this.properties$)
       .map(([operation, properties]) => {
         return operation(properties);
@@ -25,10 +25,10 @@ export class SavedPropertiesService {
   }
 
   add(propertyToAdd: Property) {
-    this.update$.next(accum => accum.includes(propertyToAdd) ? accum : accum.concat(propertyToAdd));
+    this._update$.next(accum => accum.includes(propertyToAdd) ? accum : accum.concat(propertyToAdd));
   }
 
   remove(propertyToRemove: Property) {
-    this.update$.next(accum => accum.filter(property => property !== propertyToRemove));
+    this._update$.next(accum => accum.filter(property => property !== propertyToRemove));
   }
 }

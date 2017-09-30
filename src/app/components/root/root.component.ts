@@ -19,5 +19,10 @@ export class RootComponent implements OnInit {
 
   ngOnInit() {
     this.propertySvc.load();
+    this.propertySvc.load();
+
+    window.setTimeout(() => {
+      this.propertySvc.load();
+    });
   }
 }

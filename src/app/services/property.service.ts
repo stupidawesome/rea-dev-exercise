@@ -10,7 +10,9 @@ import {ReplaySubject} from 'rxjs/ReplaySubject';
 @Injectable()
 export class PropertyService {
 
-  private fetch$: Observable<any> = this.http.get('assets/mocks/backend-data.json').share();
+  static readonly endpoint = 'assets/mocks/backend-data.json';
+
+  private fetch$: Observable<any> = this.http.get(PropertyService.endpoint).share();
   private data$ = new ReplaySubject<any>(1);
 
   get results$(): Observable<Property[]> {

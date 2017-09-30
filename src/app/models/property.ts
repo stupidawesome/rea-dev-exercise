@@ -10,7 +10,7 @@ export class Property {
   ) {}
 
   static create(data) {
-    return new Property(data.id, data.price, data.mainImage, Agency.create(data.agency));
+    return new Property(data.id, data.price, data.mainImage, Agency.create(data.agency || {}));
   }
 
 }

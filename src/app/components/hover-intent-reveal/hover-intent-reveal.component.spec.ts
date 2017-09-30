@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HoverIntentRevealComponent } from './hover-intent-reveal.component';
 
-describe('HoverIntentRevealComponent', () => {
+xdescribe('HoverIntentRevealComponent', () => {
   let component: HoverIntentRevealComponent;
   let fixture: ComponentFixture<HoverIntentRevealComponent>;
 
