@@ -10,7 +10,7 @@ import {HeadingComponent} from './components/heading/heading.component';
 import {PropertiesSavedComponent} from './components/saved-properties/saved-properties.component';
 import {ResultsComponent} from './components/results/results.component';
 import {HoverIntentComponent} from './components/hover-intent/hover-intent.component';
-import {LayerComponent} from './layer/layer.component';
+import {LayerComponent} from './components/layer/layer.component';
 import {HoverIntentRevealComponent} from './components/hover-intent-reveal/hover-intent-reveal.component';
 import {SavedPropertiesService} from './services/saved-properties.service';
 import {HttpClientModule} from '@angular/common/http';
