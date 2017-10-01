@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ```
 npm install yarn --global
-yarn add global @angular/cli@1.4.2
+yarn global add @angular/cli@1.4.2
 git clone https://github.com/stupidawesome/rea-dev-exercise.git
 cd rea-dev-exercise
 yarn install
